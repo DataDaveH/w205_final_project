@@ -1,0 +1,51 @@
+source_table	target_table	source_field	target_field	group_by	sum_of	count_of	min_of	max_of
+construction_permits	construction_permits_aggregate	CAST(TO_CHAR(TO_DATE(issue_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	date_number	1	0	0	0	0
+construction_permits	construction_permits_aggregate	CAST(original_zip AS INT)	zip_code	1	0	0	0	0
+construction_permits	construction_permits_aggregate	permit_class_mapped	residential_or_commercial	1	0	0	0	0
+construction_permits	construction_permits_aggregate	permit_type_desc	permit_type	1	0	0	0	0
+construction_permits	construction_permits_aggregate	work_class	work_class	1	0	0	0	0
+construction_permits	construction_permits_aggregate	COALESCE(CAST(total_valuation_remodel AS decimal(16,2)), COALESCE(CAST(total_job_valuation AS decimal(16,2)),  (CAST(building_valuation AS decimal(16,2)) + CAST(building_valuation_remodel AS decimal(16,2)) + CAST(electrical_valuation AS decimal(16,2)) + CAST(electrical_valuation_remodel AS decimal(16,2)) + CAST(mechanical_valuation AS decimal(16,2)) + CAST(mechanical_valuation_remodel AS decimal(16,2)) + CAST(plumbing_valuation AS decimal(16,2)) + CAST(plumbing_valuation_remodel AS decimal(16,2)) + CAST(medgas_valuation AS decimal(16,2)) + CAST(medgas_valuation_remodel AS decimal(16,2)))))	sum_project_valuation	0	1	0	0	0
+construction_permits	construction_permits_aggregate	*	total_num_permits	0	0	1	0	0
+restaurant_inspection_scores	restaurant_inspection_scores_aggregate	CAST(TO_CHAR(TO_DATE(inspection_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	date_number	1	0	0	0	0
+restaurant_inspection_scores	restaurant_inspection_scores_aggregate	CASE WHEN LENGTH(zip_code)=5 THEN CAST(zip_code AS INT) ELSE 99999 END	zip_code	1	0	0	0	0
+restaurant_inspection_scores	restaurant_inspection_scores_aggregate	CAST(score AS decimal(16,2))	sum_score	0	1	0	0	0
+restaurant_inspection_scores	restaurant_inspection_scores_aggregate	*	total_num_scores	0	0	1	0	0
+restaurant_inspection_scores	restaurant_inspection_scores_aggregate	CAST(score AS decimal(16,2))	min_score	0	0	0	1	0
+restaurant_inspection_scores	restaurant_inspection_scores_aggregate	CAST(score AS decimal(16,2))	max_score	0	0	0	0	1
+code_complaint_cases	code_complaint_cases_aggregate	CAST(TO_CHAR(TO_DATE(opened_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	date_number	1	0	0	0	0
+code_complaint_cases	code_complaint_cases_aggregate	CAST(zip_code AS INT)	zip_code	1	0	0	0	0
+code_complaint_cases	code_complaint_cases_aggregate	case_type	complaint_type	1	0	0	0	0
+code_complaint_cases	code_complaint_cases_aggregate	*	total_num_cases	0	0	1	0	0
+residential_water_consumption	residential_water_consumption_aggregate	CAST(year_month AS INT)	year_month	1	0	0	0	0
+residential_water_consumption	residential_water_consumption_aggregate	CASE WHEN LENGTH(TRIM(postal_code))=5 THEN CAST(postal_code AS INT) ELSE 99999 END	zip_code	1	0	0	0	0
+residential_water_consumption	residential_water_consumption_aggregate	customer_class	custom_class	1	0	0	0	0
+residential_water_consumption	residential_water_consumption_aggregate	CAST(total_gallons AS DECIMAL(16,2))	total_gallons	1	0	0	0	0
+commercial_water_consumption	commercial_water_consumption_aggregate	CAST(year_month AS INT)	year_month	1	0	0	0	0
+commercial_water_consumption	commercial_water_consumption_aggregate	CAST(postal_code AS INT)	zip_code	1	0	0	0	0
+commercial_water_consumption	commercial_water_consumption_aggregate	customer_class	custom_class	1	0	0	0	0
+commercial_water_consumption	commercial_water_consumption_aggregate	CAST(total_gallons AS DECIMAL(16,2))	total_gallons	1	0	0	0	0
+pothole_repair	pothole_repair_aggregate	CAST(TO_CHAR(TO_DATE(sr_created_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	created_date_number	1	0	0	0	0
+pothole_repair	pothole_repair_aggregate	CAST(sr_location_zip_code AS INT)	zip_code	1	0	0	0	0
+pothole_repair	pothole_repair_aggregate	CAST(TO_CHAR(TO_DATE(sr_updated_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	status_change_date_number	1	0	0	0	0
+pothole_repair	pothole_repair_aggregate	sr_status_desc	status	1	0	0	0	0
+pothole_repair	pothole_repair_aggregate	*	total_num_cases	0	0	1	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	CAST(TO_CHAR(TO_DATE(off_from_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	date_number	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	zip_code	zip_code	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	race_origin_code	race_origin_code	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	case_party_sex	case_party_sex	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	reason_for_stop	reason_for_stop	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	race_known	race_known	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	msearch_y_n	msearch_y_n	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	msearch_type	msearch_type	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	msearch_found	msearch_found	1	0	0	0	0
+racial_profiling_citations_temp	racial_profiling_citations_aggregate	*	total_num_cases	0	0	1	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	CAST(TO_CHAR(TO_DATE(rep_date, 'YYYY-MM-DD'),'YYYYMMDD') AS INT)	date_number	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	zip_code	zip_code	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	sex	sex	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	age_at_offense	age_at_offense	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	apd_race_desc	apd_race_desc	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	reason_for_stop_desc	reason_for_stop_desc	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	search_based_on_desc	search_based_on_desc	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	search_disc_desc	search_disc_desc	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	race_known	race_known	1	0	0	0	0
+racial_profiling_arrests_temp	racial_profiling_arrests_aggregate	*	total_num_cases	0	0	1	0	0

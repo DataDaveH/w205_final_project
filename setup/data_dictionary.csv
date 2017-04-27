@@ -1,0 +1,37 @@
+table_name	column_name	data_value	data_value_desc
+racial_profiling_citations_aggregate	case_party_sex	F	Female
+racial_profiling_citations_aggregate	case_party_sex	M	Male
+racial_profiling_citations_aggregate	race_origin_code	A	Asian
+racial_profiling_citations_aggregate	race_origin_code	B	Black
+racial_profiling_citations_aggregate	race_origin_code	H	Hispanic
+racial_profiling_citations_aggregate	race_origin_code	ME	Middle Eastern
+racial_profiling_citations_aggregate	race_origin_code	N	Native American
+racial_profiling_citations_aggregate	race_origin_code	O	Other
+racial_profiling_citations_aggregate	race_origin_code	W	White
+racial_profiling_citations_aggregate	reason_for_stop	0	0 No description
+racial_profiling_citations_aggregate	reason_for_stop	1	1 Violation of transportation code/vehicle laws
+racial_profiling_citations_aggregate	reason_for_stop	2	2 Violation of penal code
+racial_profiling_citations_aggregate	reason_for_stop	3	3 Consent of interview
+racial_profiling_citations_aggregate	reason_for_stop	4	4 Suspicious person
+racial_profiling_citations_aggregate	reason_for_stop	5	5 Call for service
+racial_profiling_citations_aggregate	reason_for_stop	6	6 Pre-existing knowledge
+racial_profiling_citations_aggregate	reason_for_stop	7	7 Specific detail
+racial_profiling_citations_aggregate	reason_for_stop	8	8 Other
+racial_profiling_citations_aggregate	reason_for_stop	9	9 Violation of city ordinance
+racial_profiling_citations_aggregate	reason_for_stop	10	10 Outstanding warrant
+racial_profiling_citations_aggregate	msearch_type	0	0 No description
+racial_profiling_citations_aggregate	msearch_type	1	1 Frisk for safety
+racial_profiling_citations_aggregate	msearch_type	2	2 Consent
+racial_profiling_citations_aggregate	msearch_type	3	3 Probable cause
+racial_profiling_citations_aggregate	msearch_type	4	4 Contraband/evidence in plain view
+racial_profiling_citations_aggregate	msearch_type	5	5 Towing of motor vehicle
+racial_profiling_citations_aggregate	msearch_type	6	6 Arrest of person in vehicle
+racial_profiling_citations_aggregate	msearch_found	0	0 No description
+racial_profiling_citations_aggregate	msearch_found	1	1 Weapons
+racial_profiling_citations_aggregate	msearch_found	2	2 Cash
+racial_profiling_citations_aggregate	msearch_found	3	3 Alcohol
+racial_profiling_citations_aggregate	msearch_found	4	4 Other
+racial_profiling_citations_aggregate	msearch_found	5	5 Nothing
+racial_profiling_citations_aggregate	msearch_found	6	6 Drugs
+racial_profiling_arrests_aggregate	sex	F	Female
+racial_profiling_arrests_aggregate	sex	M	Male
